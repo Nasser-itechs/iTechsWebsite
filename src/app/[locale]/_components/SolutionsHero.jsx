@@ -1,7 +1,10 @@
 import Image from "next/image";
 import { getTranslations, getLocale } from "next-intl/server";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronRight,
+  faChevronLeft,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "@/i18n/navigation";
 import { HEADING_SECTION } from "@/lib/typography";
 
@@ -14,9 +17,8 @@ export default async function SolutionsHero() {
 
   return (
     <section className="relative w-full min-h-screen lg:h-screen overflow-hidden lg:overflow-hidden flex flex-col">
-
       <Image
-        src="/assets/home page/Solutions.jpg"
+        src="/assets/home page/Solutions_reduced.jpg"
         alt="iTechs Solutions"
         fill
         className="object-cover"
@@ -30,15 +32,20 @@ export default async function SolutionsHero() {
 
       {/* Top border strip — z-20 so it overlays the teal lines */}
       <div className="shrink-0 z-20 pointer-events-none overflow-hidden h-16 ltr:mask-[linear-gradient(to_right,rgba(0,0,0,0.05),rgba(0,0,0,0.80))] rtl:mask-[linear-gradient(to_left,rgba(0,0,0,0.05),rgba(0,0,0,0.80))]">
-        <Image src="/assets/elements/horizontalColumnBlue.png" alt="" width={1600} height={100} className="w-full h-16 object-cover object-bottom brightness-65" aria-hidden="true" />
+        <Image
+          src="/assets/elements/horizontalColumnBlue.png"
+          alt=""
+          width={1600}
+          height={100}
+          className="w-full h-16 object-cover object-bottom brightness-65"
+          aria-hidden="true"
+        />
       </div>
 
       {/* Content wrapper — grows to fill space between strips */}
       <div className="relative flex-1 lg:overflow-hidden">
-
         {/* Main content row — desktop only */}
         <div className="z-10 hidden lg:flex flex-row items-stretch overflow-hidden absolute inset-0">
-
           {/* Heading anchored to bottom-left */}
           <div className="flex-1 flex flex-col justify-end pb-6 ps-12 lg:ps-20">
             <h2 className={`${HEADING_SECTION} text-white leading-tight`}>
@@ -77,14 +84,16 @@ export default async function SolutionsHero() {
 
           {/* Chevron */}
           <div className="flex items-center px-4">
-            <Link href="/services" className="text-itechsSkyBlue/60 hover:text-itechsSkyBlue transition-colors">
+            <Link
+              href="/services"
+              className="text-itechsSkyBlue/60 hover:text-itechsSkyBlue transition-colors"
+            >
               <FontAwesomeIcon
                 icon={isRtl ? faChevronLeft : faChevronRight}
                 className="text-2xl"
               />
             </Link>
           </div>
-
         </div>
 
         {/* Mobile stacked layout — hidden at lg and above */}
@@ -93,9 +102,7 @@ export default async function SolutionsHero() {
             <h2 className={`${HEADING_SECTION} text-white leading-tight`}>
               {t("heading1")}
             </h2>
-            <p className="text-sm text-white/80 mt-1">
-              {t("heading2")}
-            </p>
+            <p className="text-sm text-white/80 mt-1">{t("heading2")}</p>
           </div>
 
           <div className="flex flex-col gap-6">
@@ -133,14 +140,19 @@ export default async function SolutionsHero() {
             />
           </Link>
         </div>
-
       </div>
 
       {/* Bottom border strip — z-20 */}
       <div className="shrink-0 z-20 pointer-events-none overflow-hidden h-16 ltr:mask-[linear-gradient(to_right,rgba(0,0,0,0.05),rgba(0,0,0,0.80))] rtl:mask-[linear-gradient(to_left,rgba(0,0,0,0.05),rgba(0,0,0,0.80))]">
-        <Image src="/assets/elements/horizontalColumnBlue.png" alt="" width={1600} height={100} className="w-full h-16 object-cover object-top brightness-65" aria-hidden="true" />
+        <Image
+          src="/assets/elements/horizontalColumnBlue.png"
+          alt=""
+          width={1600}
+          height={100}
+          className="w-full h-16 object-cover object-top brightness-65"
+          aria-hidden="true"
+        />
       </div>
-
     </section>
   );
 }
