@@ -1,3 +1,6 @@
+export const runtime = 'edge';
+export const dynamic = 'force-dynamic';
+
 import { resend } from '@/lib/resend';
 
 function escapeHtml(str) {
